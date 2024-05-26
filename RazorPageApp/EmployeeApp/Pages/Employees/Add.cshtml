@@ -1,0 +1,48 @@
+﻿@page
+@model EmployeeApp.Pages.Employees.AddModel
+@{
+    var message = ViewData["Message"]?.ToString();
+}
+
+<h1 class="mb-3">
+    Add New Employee
+</h1>
+@if (!string.IsNullOrEmpty(message))
+{
+    <div class="alert alert-success" role="alert">
+        @message
+    </div>
+}
+<div class="mb-3">
+    <form method="post">
+        <div class="row">
+            <div class="col-6">
+                <label class="form-label">Name</label>
+                <input type="text" class="form-control" style="border-radius : 0" asp-for="EmployeeViewModel.Name" />
+            </div>
+            <div class="col-6">
+                <label class="form-label">Email</label>
+                <input type="text" class="form-control" style="border-radius : 0" asp-for="EmployeeViewModel.Email" />
+            </div>
+            <div class="col-6">
+                <label class="form-label">Salary</label>
+                <input type="number" class="form-control" style="border-radius : 0" asp-for="EmployeeViewModel.Salary" />
+            </div>
+            <div class="col-6">
+                <label class="form-label">Date of Birth</label>
+                <input type="date" class="form-control" style="border-radius : 0" asp-for="EmployeeViewModel.DateOfBirth" />
+            </div>
+            <div class="col-6">
+                <label class="form-label">Department</label>
+                <input type="text" class="form-control" style="border-radius : 0" asp-for="EmployeeViewModel.Department" />
+            </div>
+            <div class="pt-2">
+                <button type="submit" style="border-radius : 0" class="btn btn-primary">Submit</button>
+            </div>
+
+        </div>
+    </form>
+   
+   
+   
+</div>
